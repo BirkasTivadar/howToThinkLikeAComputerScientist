@@ -9,18 +9,20 @@ drawer: Turtle = turtle.Turtle()
 drawer.pensize(2)
 drawer.color("pink3")
 
+
 def csillag_rajzolas(t: Turtle):
     for i in range(5):
         t.forward(100)
         t.right(144)
 
+
 def ot_cillag_rajzolas(t: Turtle):
     for i in range(5):
         csillag_rajzolas(t)
-       # t.penup()
+        t.penup()
         t.forward(650)
         t.right(144)
-       # t.pendown()
+        t.pendown()
 
 
 ot_cillag_rajzolas(drawer)
