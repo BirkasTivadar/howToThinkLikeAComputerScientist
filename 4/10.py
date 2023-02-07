@@ -16,7 +16,7 @@ def csillag_rajzolas(t: Turtle):
         t.right(144)
 
 
-def ot_cillag_rajzolas(t: Turtle):
+def ot_csillag_rajzolas(t: Turtle):
     for i in range(5):
         csillag_rajzolas(t)
         t.penup()
@@ -25,6 +25,6 @@ def ot_cillag_rajzolas(t: Turtle):
         t.pendown()
 
 
-ot_cillag_rajzolas(drawer)
+ot_csillag_rajzolas(drawer)
 
 ablak.mainloop()
