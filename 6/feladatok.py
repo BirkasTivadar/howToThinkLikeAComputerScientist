@@ -125,3 +125,116 @@ def honap_napja(honap: str):
 teszt(honap_napja("február") == 28)
 teszt(honap_napja("november") == 30)
 teszt(honap_napja("december") == 31)
+
+"""
+7. Írj egy masodpercre_valtas függvényt, mely órákat, perceket és másodperceket kap meg argumentumként, és kiszámolja hány másodpercnek felelnek meg összesen. Néhány teszteset:
+"""
+
+
+def masodpercre_valtas(ora: int, perc: int, masodperc: int):
+    return ora * 3600 + perc * 60 + masodperc
+
+
+teszt(masodpercre_valtas(2, 30, 10) == 9010)
+teszt(masodpercre_valtas(2, 0, 0) == 7200)
+teszt(masodpercre_valtas(0, 2, 0) == 120)
+teszt(masodpercre_valtas(0, 0, 42) == 42)
+teszt(masodpercre_valtas(0, -10, 10) == -590)
+
+"""
+8. Egészítsd ki a masodpercre_valtas függvényt úgy, hogy valós számok érkezése esetén is helyesen működjön. A végeredményt egészre vágva (ne kerekítve) add meg:
+"""
+
+
+def masodpercre_valtas2(ora: float, perc: float, masodperc: float):
+    return int(ora * 3600 + perc * 60 + masodperc)
+
+
+teszt(masodpercre_valtas2(2.5, 0, 10.71) == 9010)
+teszt(masodpercre_valtas2(2.433, 0, 0) == 8758)
+
+"""
+9. Írj három függvényt, melyek a masodpercre_valtas fordítottját valósítják meg:
+orakra_valtas: az argumentumként átadott másodperceket órákra váltja. A teljes órák számával tér vissza.
+percekre_valtas: az argumentumként átadott másodpercekből leszámítja a teljes órákat, a maradékot pedig percekbe váltja. A teljes percek számával tér vissza.
+masodpercekre_valtas: visszatér az argumentumként kapott másodpercekből fennmaradó másodpercekkel.
+Feltételezheted, hogy az átadott másodpercek száma egész érték. Néhány teszt:
+"""
+
+
+def orakra_valtas(masodperc):
+    return masodperc // 3600
+
+
+def percekre_valtas(masodperc):
+    return (masodperc % 3600) // 60
+
+
+def masodpercekre_valtas(masodperc):
+    return masodperc % 60
+
+
+teszt(orakra_valtas(9010) == 2)
+teszt(percekre_valtas(9010) == 30)
+teszt(masodpercekre_valtas(9010) == 10)
+
+"""
+10. Melyik teszt lesz sikeretlen és miért?:
+"""
+
+teszt(3 % 4 == 0)  # A maradék nem 0, hanem 3
+teszt(3 % 4 == 3)
+teszt(3 / 4 == 0)  # Az eredmény nem int, hanem float és így már nem 0, hanem 0.75 az eredméy
+teszt(3 // 4 == 0)
+teszt(3 + 4 * 2 == 14)  # Precedencia miatt a szorzás előbb kerül kiértékelésre, mint az összeadás, az eredmény: 11
+teszt(
+    4 - 2 + 2 == 0)  # Balról jobbra történik a kiértékelés, előbb 4-ből 2, majd ennek eredménéyhez adódik hozzá a kettő, az eredmény: 4
+teszt(len("helló, világ!") == 13)
+
+"""
+11. Írj egy osszehasonlitas függvényt, amely 1-et ad vissza, ha a > b, 0-t ad vissza, ha a == b, és -1-t, ha a < b
+"""
+
+
+def osszehasonlitas(a: int, b: int):
+    if a > b:
+        return 1
+    else:
+        return (a == b) - 1
+
+
+teszt(osszehasonlitas(5, 4) == 1)
+teszt(osszehasonlitas(7, 7) == 0)
+teszt(osszehasonlitas(2, 3) == -1)
+teszt(osszehasonlitas(42, 1) == 1)
+
+"""
+12. Írj egy atfogo nevű függvényt, amely egy derékszögű háromszög két befogójának hossza alapján visszaadja az átfogó hosszát:
+"""
+
+
+def atfogo(a: int, b: int):
+    return (a ** 2 + b ** 2) ** 0.5
+
+
+teszt(atfogo(3, 4) == 5.0)
+teszt(atfogo(12, 5) == 13.0)
+teszt(atfogo(24, 7) == 25.0)
+teszt(atfogo(9, 12) == 15.0)
+
+"""
+13. Implementáld a meredekseg(x1, y1, x2, y2) függvényt, úgy, hogy az (x1, y1) és (x2, y2) pontokon átmenő egyenes meredekségét határozza meg:
+"""
+
+
+def meredekseg(x1: int, y1: int, x2: int, y2: int):
+    if (x2 - x1) == 0:
+        return
+    return (y2 - y1) / (x2 - x1)
+
+
+teszt(meredekseg(5, 3, 4, 2) == 1.0)
+teszt(meredekseg(1, 2, 3, 2) == 0.0)
+teszt(meredekseg(1, 2, 3, 3) == 0.5)
+teszt(meredekseg(2, 4, 1, 2) == 2.0)
+teszt(meredekseg(2, 4, 2, 5) == None)
