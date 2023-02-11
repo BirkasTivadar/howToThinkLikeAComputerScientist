@@ -238,3 +238,18 @@ teszt(meredekseg(1, 2, 3, 2) == 0.0)
 teszt(meredekseg(1, 2, 3, 3) == 0.5)
 teszt(meredekseg(2, 4, 1, 2) == 2.0)
 teszt(meredekseg(2, 4, 2, 5) == None)
+
+"""
+14. Írj egy paros_e(n) függvényt, amely egy egészet vár argumentumként, és True-t ad vissza, ha az argumentum páros szám, és False-t, ha páratlan.
+
+Adj a tesztkészlethez saját teszteseteket.
+"""
+
+
+def paros_e(num: int):
+    return num % 2 == 0
+
+
+teszt(paros_e(2) == True)
+teszt(paros_e(13) == False)
+teszt(paros_e(256) == True)
