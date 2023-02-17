@@ -241,7 +241,6 @@ teszt(meredekseg(2, 4, 2, 5) == None)
 
 """
 14. Írj egy paros_e(n) függvényt, amely egy egészet vár argumentumként, és True-t ad vissza, ha az argumentum páros szám, és False-t, ha páratlan.
-
 Adj a tesztkészlethez saját teszteseteket.
 """
 
@@ -250,6 +249,98 @@ def paros_e(num: int):
     return num % 2 == 0
 
 
-teszt(paros_e(2) == True)
-teszt(paros_e(13) == False)
-teszt(paros_e(256) == True)
+teszt(paros_e(2))
+teszt(paros_e(-24))
+teszt(not paros_e(13))
+teszt(paros_e(256))
+
+"""
+15. Most írj egy paratlen_e(n) függvényt is, amely akkor tér vissza True értékkel, ha n páratlan, és akkor False értékkel, ha páros.
+Teszteket is készíts!
+"""
+
+
+def paratlan_e(num: int):
+    return num % 2 != 0
+
+
+teszt(not paratlan_e(256))
+teszt(not paratlan_e(28))
+teszt(paratlan_e(25))
+teszt(paratlan_e(-5))
+
+"""
+16. Készíts egy tenyezo_e(t, n) fejlécű függvényt, amely átmegy az alábbi teszteken. (Ne csak a prímtényezőkre adjon vissza igazat a függvényed.)
+"""
+
+
+def tenyezo_e(oszto, osztando):
+    return osztando % oszto == 0
+
+
+teszt(tenyezo_e(3, 12))
+teszt(not tenyezo_e(5, 12))
+teszt(tenyezo_e(7, 14))
+teszt(not tenyezo_e(7, 15))
+teszt(tenyezo_e(1, 15))
+teszt(tenyezo_e(15, 15))
+teszt(not tenyezo_e(25, 15))
+"""
+Az egységteszt fontos szerepe, hogy „félreérhetetlen” követelmény megadásként viselkedjen. A tesztesetek megadják a választ arra a kérdésre, hogy magát az 1-et és a 15-öt is a 15 tényezőjének tekintsük-e.
+"""
+
+"""
+17. Írj egy tobbszorose_e fejlécű függvényt, mely kielégíti az alábbi egységtesztet.
+"""
+
+
+def tobbszorose_e(osztando, oszto):
+    return osztando % oszto == 0
+
+
+"""
+Fel tudnád-e használni a tenyezo_e függvényt a tobbszorose_e függvény megírásánál?
+Igen:
+
+def tobbszorose_e(osztando, oszto):
+    return tenyezo_e(oszto, osztando)
+"""
+
+teszt(tobbszorose_e(12, 3))
+teszt(tobbszorose_e(12, 4))
+teszt(not tobbszorose_e(12, 5))
+teszt(tobbszorose_e(12, 6))
+teszt(not tobbszorose_e(12, 7))
+
+"""
+18. Írj egy celsiusra_valtas(f) függvényt, mely egy Fahrenheitben megadott értéket Celsius fokra vált át. A függvény a legközelebbi egész értéket adja vissza. (Segítség: Ha a beépített round függvényt szeretnéd használni, próbáld kiíratni a round.__doc__ -et a Python konzolban, vagy a függvény nevén állva nyomd le a Ctrl+Q billentyűkombinációt. Kísérletezz, ameddig rá nem jössz, hogyan működik. ):
+"""
+
+
+def celsiusra_valtas(fahrneheit):
+    return round((fahrneheit - 32) / 1.8)
+
+
+teszt(celsiusra_valtas(212) == 100)  # A víz forráspontja
+teszt(celsiusra_valtas(32) == 0)  # A víz fagyáspontja
+teszt(celsiusra_valtas(-40) == -40)  # Ó, micsoda érdekes eset!
+teszt(celsiusra_valtas(36) == 2)
+teszt(celsiusra_valtas(37) == 3)
+teszt(celsiusra_valtas(38) == 3)
+teszt(celsiusra_valtas(39) == 4)
+
+"""
+19. Most tedd az ellenkezőjét: írj egy celsiusra_valtas függvényt, mely egy Celsius-fokban megadott értéket Fahrenheit skálára vált át:
+"""
+
+
+def fahrenheitre_valtas(celsius):
+    return round((celsius * 1.8) + 32)
+
+
+teszt(fahrenheitre_valtas(0) == 32)
+teszt(fahrenheitre_valtas(100) == 212)
+teszt(fahrenheitre_valtas(-40) == -40)
+teszt(fahrenheitre_valtas(12) == 54)
+teszt(fahrenheitre_valtas(18) == 64)
+teszt(fahrenheitre_valtas(-48) == -54)
