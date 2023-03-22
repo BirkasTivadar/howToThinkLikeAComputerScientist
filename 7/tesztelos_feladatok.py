@@ -1,6 +1,4 @@
 import sys
-import turtle
-from turtle import Screen, Turtle
 
 
 def teszt(sikeres_teszt):
@@ -195,35 +193,56 @@ teszt(not prim_e(35))
 teszt(not prim_e(19730421))
 
 """
-11. Emlékezz a részeg kalóz problémára a 3. fejezet feladataiból! Most a részeg kalóz tesz egy fordulatot és pár lépést előre, majd ezt ismételgeti. A bölcsészhallgatónk feljegyzi a mozgás adatpárjait: az elfordulás szöge és az ezt követő lépések száma. A kísérleti adatai ezek: [(160, 20), (-43, 10), (270, 8), (-43, 12)]. Használj egy teknőcöt a pityókás barátunk útvonalának megjelenítéséhez!
+14. Mit fog a szamjegy_szam(0) függvényhívás visszaadni? Módosítsd, hogy 1-et adjon vissza ebben az esetben! Miért okoz a szamjegy_szam(-24) hívás végtelen ciklust? (Segítség: -1//10 eredménye -1) Módosítsd a szamjegy_szam függvényt, hogy jól működjön bármely egész szám esetén! Add hozzá ezeket a teszteket:
 """
 
-ablak: Screen = turtle.Screen()
-ablak.bgcolor("lightgreen")
 
-drawer: Turtle = turtle.Turtle()
-drawer.pensize(3)
+def szamjegy_szam(n):
+    if n == 0:
+        return 1
+    szamlalo = 0
+    n = abs(n)
+    while n != 0:
+        szamlalo += 1
+        n = n // 10
+    return szamlalo
 
-movingDatas = [(160, 20), (-43, 10), (270, 8), (-43, 12)]
 
-for (distance, angle) in movingDatas:
-    drawer.forward(distance)
-    drawer.left(angle)
-
-ablak.clear()
+teszt(szamjegy_szam(0) == 1)
+teszt(szamjegy_szam(4) == 1)
+teszt(szamjegy_szam(-12345) == 5)
 
 """
-12. Sok érdekes alakzat kirajzolható a teknőcökkel, ha a fentihez hasonló adatpárokat adunk nekik, ahol az első érték egy szög a második pedig egy távolság. Készítsd el az értékpár listát, és rajzoltasd ki a teknőccel a 12.png kñpen bemutatott házat! Ez elkészíthető anélkül, hogy egyszer is felemelnénk a tollat vagy egy vonalat duplán rajzolnánk.
+15. Írj egy paros_szamjegy_szam(n) függvényt, amely megszámolja a páros számjegyeket az n számban. Ezeken a teszteken át kell mennie:
 """
 
-ablak.bgcolor("lightgreen")
 
-drawer: Turtle = turtle.Turtle()
-drawer.pensize(3)
+def paros_szamjegy_szam(n):
+    if n == 0:
+        return 1
+    szamlalo = 0
+    n = abs(n)
+    while n != 0:
+        if n % 2 == 0:
+            szamlalo += 1
+        n = n // 10
+    return szamlalo
 
-tess_house = [(50, 90), (50, 30), (50, 120), (50, 30), (50, 135), (5000 ** 0.5, 135), (50, 135), (5000 ** 0.5, 45)]
-for (distance, angle) in tess_house:
-    drawer.forward(distance)
-    drawer.left(angle)
 
-ablak.mainloop()
+teszt(paros_szamjegy_szam(123456) == 3)
+teszt(paros_szamjegy_szam(2468) == 4)
+teszt(paros_szamjegy_szam(1357) == 0)
+teszt(paros_szamjegy_szam(0) == 1)
+
+"""
+16. Írj egy negyzetosszeg(xs) függvényt, amely visszaadja a paraméterként kapott listában szereplő számok négyzetének összegét! Például a negyzetosszeg([2, 3, 4]) hívás eredménye 4+9+16, azaz 29 kell legyen.
+"""
+
+
+def negyzetosszeg(xs: list):
+    return sum(x ** 2 for x in xs)
+
+
+teszt(negyzetosszeg([2, 3, 4]) == 29)
+teszt(negyzetosszeg([]) == 0)
+teszt(negyzetosszeg([2, -3, 4]) == 29)
