@@ -343,3 +343,32 @@ teszt(not palindrom_e("banán"))
 teszt(palindrom_e("mesék késem"))
 teszt(palindrom_e("a"))
 teszt(palindrom_e(""))  # Egy üres sztring palindrom-e?
+
+"""
+11. Írj egy függvényt, amely meghatározza, hányszor szerepel egy sztringben egy másik sztring:
+
+teszt(szamlalas("gö", "görögös") == 2)
+teszt(szamlalas("pa", "papaja") == 2)
+teszt(szamlalas("apa", "papaja") == 1)
+teszt(szamlalas("papa", "papaja") == 1)
+teszt(szamlalas("apap", "papaja") == 0)
+teszt(szamlalas("aaa", "aaaaaa") == 4)
+"""
+
+
+def szamlalas(keresett: str, sztring: str):
+    szamlalo = 0
+    jelzo = sztring.find(keresett)
+    while (jelzo != -1):
+        szamlalo += 1
+        sztring = sztring[jelzo + 1:]
+        jelzo = sztring.find(keresett)
+    return szamlalo
+
+
+teszt(szamlalas("gö", "görögös") == 2)
+teszt(szamlalas("pa", "papaja") == 2)
+teszt(szamlalas("apa", "papaja") == 1)
+teszt(szamlalas("papa", "papaja") == 1)
+teszt(szamlalas("apap", "papaja") == 0)
+teszt(szamlalas("aaa", "aaaaaa") == 4)
