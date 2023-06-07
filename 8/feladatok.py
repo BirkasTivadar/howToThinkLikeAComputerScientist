@@ -397,3 +397,29 @@ teszt(torles("an", "banán") == "bán")
 teszt(torles("pa", "papaja") == "paja")
 teszt(torles("pa", "Papaja") == "Paja")
 teszt(torles("alma", "kerékpár") == "kerékpár")
+
+"""
+13. Írj függvényt, amely eltávolítja egy sztringből egy másik sztring minden előfordulását. (A törlés hatására új előfordulások is keletkezhetnek. Rád bízzuk, hogy ezeket eltűnteted-e.):
+
+teszt(alapos_torles("an", "banán") == "bán")
+teszt(alapos_torles("pa", "papaja") == "ja")
+teszt(alapos_torles("pa", "Papaja") == "Paja")
+teszt(alapos_torles("alma", "kerékpár") == "kerékpár")
+teszt(alapos_torles("pa", "ppapaa" ) == "")
+"""
+
+
+def alapos_torles(keresett: str, sztring: str):
+    eredmeny = sztring
+    index = eredmeny.find(keresett)
+    while index != -1:
+        eredmeny = torles(keresett, eredmeny)
+        index = eredmeny.find(keresett)
+    return eredmeny
+
+
+teszt(alapos_torles("an", "banán") == "bán")
+teszt(alapos_torles("pa", "papaja") == "ja")
+teszt(alapos_torles("pa", "Papaja") == "Paja")
+teszt(alapos_torles("alma", "kerékpár") == "kerékpár")
+teszt(alapos_torles("pa", "ppapaa") == "")
