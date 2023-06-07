@@ -372,3 +372,28 @@ teszt(szamlalas("apa", "papaja") == 1)
 teszt(szamlalas("papa", "papaja") == 1)
 teszt(szamlalas("apap", "papaja") == 0)
 teszt(szamlalas("aaa", "aaaaaa") == 4)
+
+"""
+Írj függvényt, amely eltávolítja egy sztringből egy másik sztring első előfordulását:
+
+teszt(torles("alma", "almafa") == "fa")
+teszt(torles("an", "banán") == "bán")
+teszt(torles("pa", "papaja") == "paja")
+teszt(torles("pa", "Papaja") == "Paja")
+teszt(torles("alma", "kerékpár") == "kerékpár")
+"""
+
+
+def torles(keresett: str, sztring: str):
+    index = sztring.find(keresett)
+    if index == -1:
+        return sztring
+    hossz = len(keresett)
+    return sztring[:index] + sztring[index + hossz:]
+
+
+teszt(torles("alma", "almafa") == "fa")
+teszt(torles("an", "banán") == "bán")
+teszt(torles("pa", "papaja") == "paja")
+teszt(torles("pa", "Papaja") == "Paja")
+teszt(torles("alma", "kerékpár") == "kerékpár")
