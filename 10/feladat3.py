@@ -14,7 +14,7 @@ import turtle  # Eszti közlekedési lámpává válik.
 
 turtle.setup(400, 500)
 ablak = turtle.Screen()
-ablak.title("Eszti közlekedési lámpává válik.")
+ablak.title("Két közlekedési lámpa összehasonlítása")
 ablak.bgcolor("lightgreen")
 Eszti = turtle.Turtle()
 Sanyi = turtle.Turtle()
