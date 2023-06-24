@@ -1,5 +1,13 @@
 """
-2. Változtasd meg úgy a közlekedési lámpa vezérlő programot, hogy automatikusan váltson, egy időzítő hatására.
+3. Az egyik korábbi fejezetben találkoztunk a hideturtle és a showturtle metódusokkal, amelyekkel elrejthetők, illetve megjeleníthetők a teknőcök.
+A két metódus lehetővé teszi, hogy egy másik megközelítést alkalmazzunk a közlekedési lámpa vezérlésére készített program fejlesztésénél.
+Egészítsd ki a programod a következőkkel. Rajzolj egy második dobozt az újabb lámpák tárolására.
+Készíts három különböző teknőcöt a zöld, sárga és a zöld lámpák reprezentálásához, és tedd őket az új lámpadobozba.
+Az állapotváltáskor csak tegyél egy teknőcöt láthatóvá a háromból. Amikor készen vagy dőlj hátra, és mélyedj el a gondolataidban.
+Két különböző megoldásod van, mindkettő működőképesnek látszik.
+Jobb-e valamilyen szempontból az egyik megoldás, mint a másik?
+Melyik áll közelebb a valósághoz?
+Melyik hasonlít jobban a városodban lévő közlekedési lámpák működéséhez?
 """
 
 import turtle  # Eszti közlekedési lámpává válik.
@@ -73,6 +81,7 @@ Yellow.forward(140)
 Yellow.left(90)
 Yellow.forward(120)
 # Yellowt egy nagy zöld körré alakítjuk át
+Green.hideturtle()
 Yellow.shape("circle")
 Yellow.shapesize(3)
 Yellow.fillcolor("orange")
@@ -83,6 +92,7 @@ Red.forward(140)
 Red.left(90)
 Red.forward(190)
 # Redet egy nagy zöld körré alakítjuk át
+Yellow.hideturtle()
 Red.shape("circle")
 Red.shapesize(3)
 Red.fillcolor("red")
