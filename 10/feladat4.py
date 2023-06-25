@@ -30,16 +30,17 @@ def lampaRajzolas():
     Lampa.forward(200)
     Lampa.left(90)
     Lampa.end_fill()
+    Lampa.hideturtle()
 
 
 lampaRajzolas()
 
 Red.penup()
-# Red pozícionálása oda, ahol a zöld lámpának kell lennie
+# Red pozícionálása oda, ahol a piros lámpának kell lennie
 Red.forward(40)
 Red.left(90)
 Red.forward(190)
-# Redet egy nagy zöld körré alakítjuk át
+# Redet egy nagy piros körré alakítjuk át
 Red.shape("circle")
 Red.shapesize(3)
 Red.fillcolor("red")
@@ -56,22 +57,16 @@ Green.shapesize(3)
 Green.fillcolor("green")
 
 Yellow.penup()
-# Yellow pozícionálása oda, ahol a zöld lámpának kell lennie
+# Yellow pozícionálása oda, ahol a sárga lámpának kell lennie
 Yellow.forward(40)
 Yellow.left(90)
 Yellow.forward(120)
-# Yellowt egy nagy zöld körré alakítjuk át
+# Yellowt egy nagy sárga körré alakítjuk át
 Green.color("DarkGreen")
 Yellow.shape("circle")
 Yellow.shapesize(3)
 Yellow.fillcolor("orange")
 
-# A közlekedési lámpa egyfajta állapotautomata, három állapottal:
-#  zölddel, sárgával és pirossal. Az állapotokat rendre
-#  0, 1, 2 számokkal írjuk le.
-# Az állapotváltásnál Eszti helyzetét és színét változtatjuk meg.
-
-# Ez a változó hordozza az aktuális állapotot
 allapot_sorszam = 0
 
 
