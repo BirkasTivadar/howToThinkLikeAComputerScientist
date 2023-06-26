@@ -15,3 +15,20 @@ Mi történik, ha a start < stop és a step < 0?
  3. Egyéb esetekben üres listát kapunk.
 """
 
+"""
+2. Tekintsük a következő kódrészletet:
+
+import turtle
+
+Eszti = turtle.Turtle()
+Sanyi = Eszti
+Sanyi.color("hotpink")
+
+Ez a kódrészlet egy vagy két teknőc példányt hoz létre? 
+Egyet.
+
+A Sanyi színének megváltoztatása Eszti színét is meg fogja változtatni?
+Igen
+Magyarázd el részletesen!
+Azért, mert Sanyi és Eszti referenciája ugyanarra az objektumra mutat, a kettő valójában egy objektum két fedőnévvel.
+"""
