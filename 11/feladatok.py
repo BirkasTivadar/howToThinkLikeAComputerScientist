@@ -61,6 +61,8 @@ print("Test 2: {0}".format(ez is az))
 Test 1: False
 Test 2: True
 
+Adj részletes magyarázatot az eredményekről.
+
 Az elején ez két különböző lista, uyanazzal a tartalommal, de két különböző objektum.
 Az 'ez = az' utasítást kövtően viszont egy lista, két fedőnévvel, de a két név ugyanarra az objektumra mutat.
 """
