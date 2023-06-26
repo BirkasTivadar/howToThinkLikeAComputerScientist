@@ -32,3 +32,19 @@ Igen
 Magyarázd el részletesen!
 Azért, mert Sanyi és Eszti referenciája ugyanarra az objektumra mutat, a kettő valójában egy objektum két fedőnévvel.
 """
+
+"""
+Rajzolj az a és b számára egy pillanatképet, a következő Python kód 3. sorának végrehajtása előtti és utáni állapotában:
+
+a = [1, 2, 3]
+b = a[:]
+b[0] = 5
+
+Előtte:
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+Utána:
+a = [1, 2, 3]
+b = [5, 2, 3]
+"""
