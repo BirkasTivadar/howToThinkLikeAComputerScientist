@@ -34,7 +34,7 @@ Azért, mert Sanyi és Eszti referenciája ugyanarra az objektumra mutat, a kett
 """
 
 """
-Rajzolj az a és b számára egy pillanatképet, a következő Python kód 3. sorának végrehajtása előtti és utáni állapotában:
+3. Rajzolj az a és b számára egy pillanatképet, a következő Python kód 3. sorának végrehajtása előtti és utáni állapotában:
 
 a = [1, 2, 3]
 b = a[:]
@@ -47,4 +47,20 @@ b = [1, 2, 3]
 Utána:
 a = [1, 2, 3]
 b = [5, 2, 3]
+"""
+
+"""
+4. Mi lesz a következő programrészlet kimenete?
+
+ez = ["Én", "nem", "vagyok", "egy", "csodabogár"]
+az = ["Én", "nem", "vagyok", "egy", "csodabogár"]
+print("Test 1: {0}".format(ez is az))
+ez = az
+print("Test 2: {0}".format(ez is az))
+
+Test 1: False
+Test 2: True
+
+Az elején ez két különböző lista, uyanazzal a tartalommal, de két különböző objektum.
+Az 'ez = az' utasítást kövtően viszont egy lista, két fedőnévvel, de a két név ugyanarra az objektumra mutat.
 """
