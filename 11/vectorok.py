@@ -73,3 +73,24 @@ def vektorialis_szorzat(vektor1: list, vektor2: list):
 teszt(vektorialis_szorzat([2, 2, 2], [3, 3, 3]) == [0, 0, 0])
 teszt(vektorialis_szorzat([1, 2, 3], [4, 5, 6]) == [-3, 6, -3])
 teszt(vektorialis_szorzat([0, 2, -5], [-1, 3, -8]) == [-1, 5, 2])
+
+"""
+9. Írd le a " ".join(nota.split()) és nota közötti kapcsolatot az alábbi kódrészletben. 
+
+nota = "Esik eső, szép csendesen csepereg..."
+
+Ugyanazok a sztringek vannak hozzárendelve a nota-hoz? 
+Igen, ugyanazok.
+
+Mikor lennének különbözőek?
+
+Ha a 
+
+" ".join(nota.split()
+
+helyett a 
+
+" ".join("Esik eső, szép csendesen csepereg...".split()
+
+kifejezést használnák
+"""
