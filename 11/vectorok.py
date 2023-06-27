@@ -94,3 +94,22 @@ helyett a
 
 kifejezést használnák
 """
+
+"""
+10. rj egy cserel(s, regi, uj) függvényt, 
+amely kicseréli a regi összes előfordulását a uj-ra az s szrtingben.
+"""
+
+
+def cserel(szoveg, regi, uj):
+    return uj.join(szoveg.split(regi))
+
+
+teszt(cserel("Mississippi", "i", "I") == "MIssIssIppI")
+
+s = "Kerek a gömb, gömbszerű!"
+teszt(cserel(s, "öm", "om") ==
+      "Kerek a gomb, gombszerű!")
+
+teszt(cserel(s, "o", "ö") ==
+      "Kerek a gömb, gömbszerű!")
