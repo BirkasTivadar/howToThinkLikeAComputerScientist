@@ -114,3 +114,53 @@ teszt(cserel(s, "öm", "om") ==
 
 teszt(cserel(s, "o", "ö") ==
       "Kerek a gömb, gömbszerű!")
+
+"""
+Tegyük fel, hogy két változó értékét akarjuk felcserélni. 
+Újra felhasználható függvényt hozz létre, írd bele az alábbi kódot:
+
+
+def csere(x, y):      # Hibás változat
+    print("csere utasítás előtt: x:", x, "y:", y)
+    (x, y) = (y, x)
+    print("csere utasítás után: x:", x, "y:", y)
+
+a = ["Ez", "nagyon", "érdekes"]
+b = [2,3,4]
+print("csere függvény hívása előtt: a:", a, "b:", b)
+csere(a, b)
+print("csere függvény hívása után: a:", a, "b:", b)
+Futtasd a fenti programot, és írd le az eredményeket. 
+Hoppá! Nem azt tette, amit szerettünk volna! Magyarázd el miért nem. 
+
+Mert csak a listák referenciáit cseréli fel, és ez a csere csak a függvény törzsén belül érvényes.
+
+Használd a Python megjelenítőt, amely segítségével építs egy működő koncepcionális modellt! 
+Mi lesz az a és b értéke a csere függvény hívása után?
+"""
+
+
+# def csere(x, y):  # Hibás változat
+#     print("csere utasítás előtt: x:", x, "y:", y)
+#     (x, y) = (y, x)
+#     print("csere utasítás után: x:", x, "y:", y)
+#
+# a = ["Ez", "nagyon", "érdekes"]
+# b = [2, 3, 4]
+# print("csere függvény hívása előtt: a:", a, "b:", b)
+# csere(a, b)
+# print("csere függvény hívása után: a:", a, "b:", b)
+
+def csere(x, y):  # jó változat:
+    print("csere utasítás előtt: x:", x, "y:", y)
+    for i in range(len(a)):
+        x[i], y[i] = y[i], x[i]
+    print("csere utasítás után: x:", x, "y:", y)
+    return x, y
+
+
+a = ["Ez", "nagyon", "érdekes"]
+b = [2, 3, 4]
+print("csere függvény hívása előtt: a:", a, "b:", b)
+csere(a, b)
+print("csere függvény hívása után: a:", a, "b:", b)
