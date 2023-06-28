@@ -96,8 +96,9 @@ kifejezést használnák
 """
 
 """
-10. rj egy cserel(s, regi, uj) függvényt, 
+10. Írj egy cserel(s, regi, uj) függvényt, 
 amely kicseréli a regi összes előfordulását a uj-ra az s szrtingben.
+Tipp: Használd a split és join metódusokat.
 """
 
 
