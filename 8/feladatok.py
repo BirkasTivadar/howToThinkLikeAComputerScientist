@@ -3,7 +3,7 @@
 Javasoljuk, hogy egy fájlban készítsd el az alábbi feladatokat, az előző feladatokban látott tesztelő függvényeket is bemásolva a fájlba.
 """
 
-from test import *
+from egyseg_teszt import *
 
 """
 1. Milyen eredményt adnak az alábbi kifejezések? (Ellenőrizd a válaszaid a print függvény segítségével.)

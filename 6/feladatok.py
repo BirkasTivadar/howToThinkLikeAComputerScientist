@@ -3,7 +3,7 @@ Az összes feladatot egyetlen szkriptben írd meg, és a szkripthez add hozzá a
 Az összes feladat megoldása után ellenőrizd, hogy minden teszt sikeres-e.
 """
 
-from test import *
+from egyseg_teszt import *
 
 """
 1. A négy tájegységet rövidítse: „K” , „Ny” , „É”, „D”. Írj egy fordulj_orajarasi_iranyba függvényt, amely egy tájegységet leíró karakter rövidítését várja, és visszaadja az órajárási irányban nézve szomszédos égtáj rövidítését. Itt van néhány tesztest, melyre működnie kell a függvényednek:

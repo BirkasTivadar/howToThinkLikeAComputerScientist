@@ -6,7 +6,7 @@ Hozz létre egy vectorok.py szkriptet, és írd bele az alábbi Python kódot, h
 Írj egy vektorok_osszege(u, v) függvényt, amely paraméterként két azonos hosszúságú listát kap, és adjon vissza egy új listát, mely tartalmazza a megfelelő elemek összegét:
 """
 
-from test import *
+from egyseg_teszt import *
 
 
 def vektorok_osszege(vektor1: list, vektor2: list):

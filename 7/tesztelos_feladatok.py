@@ -1,4 +1,4 @@
-from test import *
+from egyseg_teszt import *
 
 """
 1. Írj egy függvényt, ami megszámolja hány páratlan szám van egy listában!
