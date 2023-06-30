@@ -1,5 +1,5 @@
 """
-Nyisd meg a math modul dokumentációját.
+2. Nyisd meg a math modul dokumentációját.
 
 Hány függvényt tartalmaz a math modul?
 """
