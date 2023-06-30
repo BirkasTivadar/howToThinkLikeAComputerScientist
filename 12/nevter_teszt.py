@@ -17,3 +17,14 @@ import sajatmodul2
 
 print((sajatmodul2.sajatev - sajatmodul1.sajatev) ==
       (sajatmodul2.ev - sajatmodul1.ev))
+
+"""
+Írd a következő utasításokat a sajatmodul1.py, a sajatmodul2.py és a nevter_teszt.py fájlokhoz az előző gyakorlatból:
+
+print("Az én nevem", __name__)
+Futtassuk a nevter_teszt.py-t! Mi történik? Miért? Most adjuk hozzá a következőket a sajatmodul1.py végére:
+
+if __name__ == "__main__":
+    print("Ez nem fog futni, ha importálok.")
+Futtasd újra a sajatmodul1.py és nevter_teszt.py-t! Mely esetben látod az új kiíratást?
+"""
