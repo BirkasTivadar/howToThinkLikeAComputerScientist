@@ -1,4 +1,4 @@
-# Próbáld ki a következőt:
+# 6. Próbáld ki a következőt:
 
 import this
 # Tim Peters mit mond a névterekről?
