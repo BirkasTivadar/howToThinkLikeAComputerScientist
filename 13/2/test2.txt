@@ -1,0 +1,6 @@
+információ:
+informatika, fizika, matematika
+matematika, fizika, testnevelés
+fizika, matematika, testnevelés
+testnevelés, informatika, matematika
+környezetvédelem, testnevelés, informatika
