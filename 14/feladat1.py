@@ -58,10 +58,10 @@ def elsoListabanCsak(xs, ys):
             return eredmeny  # Készen vagyunk
 
         if yi >= len(ys):  # Ha az ys lista végére értünk
-            eredmeny.extend((xs[xi:]))  # A maradék xs-t hozzámáuoljuk az eredményhez
-            return eredmeny
+            eredmeny.extend(xs[xi:])  # A maradék xs-t hozzámáuoljuk az eredményhez
+            return eredmeny  # Készen vagyunk
 
-        # Ha mindkét listában vannak még elemek, akkor a kisebbik elemet másoljuk az eredmény listába
+        # Ha mindkét listában vannak még elemek
         if xs[xi] == ys[yi]:  # Ha az elem mindkét listában benne van
             xi += 1  # Továbblépünk
             yi += 1
@@ -69,7 +69,41 @@ def elsoListabanCsak(xs, ys):
             eredmeny.append(xs[xi])  # Bemásoljuk az eredmény listába
             xi += 1
         elif ys[yi] < xs[xi]:  # ha az elem a ys litában van csak
-            yi += 1  # Továbblépünk
+            yi += 1
 
 
 teszt(elsoListabanCsak(list1, list2) == ["barack", "narancs"])
+teszt(elsoListabanCsak(list2, list1) == ["citrom", "egres", "naspolya"])
+
+
+# c. Csak azokat az elemeket adja vissza, melyek benne vannak a második listában, de nincsenek az elsőben.
+def masodikListabanCsak(xs, ys):
+    """
+    Összefésüli a rendezett xs és ys listákat. Visszatér azokkal az elemekkel,
+    amelyek benne vannak a második listában, de nincsenek benne az elsőben.
+    """
+    eredmeny = []
+    xi = 0
+    yi = 0
+
+    while True:
+        if xi >= len(xs):  # Ha az xs lista végére értünk
+            eredmeny.extend(ys[yi:])  # A maradék ys-t hozzámáuoljuk az eredményhez
+            return eredmeny  # Készen vagyunk
+
+        if yi >= len(ys):  # Ha az ys lista végére értünk
+            return eredmeny  # Készen vagyunk
+
+        # Ha mindkét listában vannak még elemek
+        if xs[xi] == ys[yi]:  # Ha az elem mindkét listában benne van
+            xi += 1  # Továbblépünk
+            yi += 1
+        elif xs[xi] < ys[yi]:  # Ha az elem csak az xs listában van csak
+            xi += 1
+        elif ys[yi] < xs[xi]:  # ha az elem a ys litában van csak
+            eredmeny.append(ys[yi])  # Bemásoljuk az eredmény listába
+            yi += 1
+
+
+teszt(masodikListabanCsak(list1, list2) == ["citrom", "egres", "naspolya"])
+teszt(masodikListabanCsak(list2, list1) == ["barack", "narancs"])
