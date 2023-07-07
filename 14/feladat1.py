@@ -58,17 +58,17 @@ def elsoListabanCsak(xs, ys):
             return eredmeny  # Készen vagyunk
 
         if yi >= len(ys):  # Ha az ys lista végére értünk
-            eredmeny.extend(xs[xi:])  # A maradék xs-t hozzámáuoljuk az eredményhez
+            eredmeny.extend(xs[xi:])  # A maradék xs-t hozzámásoljuk az eredményhez
             return eredmeny  # Készen vagyunk
 
         # Ha mindkét listában vannak még elemek
         if xs[xi] == ys[yi]:  # Ha az elem mindkét listában benne van
             xi += 1  # Továbblépünk
             yi += 1
-        elif xs[xi] < ys[yi]:  # Ha az elem csak az xs listában van csak
+        elif xs[xi] < ys[yi]:  # Ha az elem csak az xs listában van csak meg
             eredmeny.append(xs[xi])  # Bemásoljuk az eredmény listába
             xi += 1
-        elif ys[yi] < xs[xi]:  # ha az elem a ys litában van csak
+        elif ys[yi] < xs[xi]:  # Ha az elem a ys listában van csak meg
             yi += 1
 
 
@@ -88,7 +88,7 @@ def masodikListabanCsak(xs, ys):
 
     while True:
         if xi >= len(xs):  # Ha az xs lista végére értünk
-            eredmeny.extend(ys[yi:])  # A maradék ys-t hozzámáuoljuk az eredményhez
+            eredmeny.extend(ys[yi:])  # A maradék ys-t hozzámásoljuk az eredményhez
             return eredmeny  # Készen vagyunk
 
         if yi >= len(ys):  # Ha az ys lista végére értünk
@@ -98,12 +98,46 @@ def masodikListabanCsak(xs, ys):
         if xs[xi] == ys[yi]:  # Ha az elem mindkét listában benne van
             xi += 1  # Továbblépünk
             yi += 1
-        elif xs[xi] < ys[yi]:  # Ha az elem csak az xs listában van csak
+        elif xs[xi] < ys[yi]:  # Ha az elem csak az xs listában van csak meg
             xi += 1
-        elif ys[yi] < xs[xi]:  # ha az elem a ys litában van csak
+        elif ys[yi] < xs[xi]:  # ha az elem a ys listában van csak meg
             eredmeny.append(ys[yi])  # Bemásoljuk az eredmény listába
             yi += 1
 
 
 teszt(masodikListabanCsak(list1, list2) == ["citrom", "egres", "naspolya"])
 teszt(masodikListabanCsak(list2, list1) == ["barack", "narancs"])
+
+
+# d. Csak azokat az elemeket adja vissza, melyek vagy az elsőben vagy a másodikban vannak benne.
+def egyikListabanCsak(xs, ys):
+    """
+    Összefésüli a rendezett xs és ys listákat. Visszatér azokkal az elemekkel,
+    amelyek vagy az elsőben vagy a másodikban vannak csak benne.
+    """
+    eredmeny = []
+    xi = 0
+    yi = 0
+
+    while True:
+        if xi >= len(xs):  # Ha az xs lista végére értünk
+            eredmeny.extend(ys[yi:])  # A maradék ys-t hozzámásoljuk az eredményhez
+            return eredmeny  # Készen vagyunk
+
+        if yi >= len(ys):  # Ha az ys lista végére értünk
+            eredmeny.extend(xs[xi:])  # A maradék xs-t hozzámásoljuk az eredményhez
+            return eredmeny  # Készen vagyunk
+
+        # Ha mindkét listában vannak még elemek
+        if xs[xi] == ys[yi]:  # Ha az elem mindkét listában benne van
+            xi += 1  # Továbblépünk
+            yi += 1
+        elif xs[xi] < ys[yi]:  # Ha az elem csak az xs listában van csak meg
+            eredmeny.append(xs[xi])  # Bemásoljuk az eredmény listába
+            xi += 1
+        elif ys[yi] < xs[xi]:  # ha az elem a ys listában van csak meg
+            eredmeny.append(ys[yi])  # Bemásoljuk az eredmény listába
+            yi += 1
+
+
+teszt(egyikListabanCsak(list1, list2) == ["barack", "citrom", "egres", "narancs", "naspolya"])
