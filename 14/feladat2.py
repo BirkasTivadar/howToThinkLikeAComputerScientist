@@ -45,7 +45,7 @@ def mainNegyes():
             return
 
 
-mainNegyes()
+# mainNegyes()
 
 
 # 12-es sakktábla
@@ -62,7 +62,7 @@ def mainTizenkettes():
             return
 
 
-mainTizenkettes()
+# mainTizenkettes()
 
 
 # 16-os sakktábla
@@ -79,4 +79,34 @@ def mainTizenhatos():
             return
 
 
-mainTizenhatos()
+# mainTizenhatos()
+
+# Időméréses
+def mainIdomereses():
+    i = 4
+    while True:
+        bd = list(range(i))  # Generálja a kezdeti permutációt
+        vege = megoldasKereses(bd)
+        i += 1
+        if vege:
+            return
+
+
+def megoldasKereses(bd):
+    import time
+    import random
+    rng = random.Random()
+    start = time.time()
+    proba = 0
+    while True:
+        rng.shuffle(bd)
+        proba += 1
+        if not van_utkozes(bd):
+            print("Megoldás: {0}, próbálkozás: {1}.".format(bd, proba))
+            return False
+        if time.time() - start > 60:
+            print("Nincs megoldás egy perc alatt {0} méretű sakktáblára".format(len(bd)))
+            return True
+
+
+mainIdomereses()
