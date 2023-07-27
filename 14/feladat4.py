@@ -14,10 +14,10 @@ a. Írj egy függvényt, amely egy megoldást tükröz az Y tengelyre.
 from egyseg_teszt import *
 
 
-def yTukrozes(megoldas: list):
+def yTukrozes(alapFelallas: list):
     tukrozott = []
-    for i in range(-1, -len(megoldas) - 1, -1):
-        tukrozott.append(megoldas[i])
+    for i in range(-1, -len(alapFelallas) - 1, -1):
+        tukrozott.append(alapFelallas[i])
     return tukrozott
 
 
@@ -30,9 +30,9 @@ b. Írj egy függvényt, amely egy megoldást tükröz az X tengelyre.
 """
 
 
-def xTukrozes(megoldas: list):
+def xTukrozes(alapFelallas: list):
     tukrozott = []
-    for number in megoldas:
+    for number in alapFelallas:
         tukrozott.append(7 - number)
     return tukrozott
 
@@ -40,3 +40,4 @@ def xTukrozes(megoldas: list):
 teszt(xTukrozes([0, 4, 7, 5, 2, 6, 1, 3]) == [7, 3, 0, 2, 5, 1, 6, 4])
 teszt(not xTukrozes([0, 4, 7, 5, 2, 6, 1, 3]) == [2, 5, 3, 1, 7, 4, 6, 0])
 teszt(xTukrozes([5, 2, 4, 6, 0, 3, 1, 7]) == [2, 5, 3, 1, 7, 4, 6, 0])
+
