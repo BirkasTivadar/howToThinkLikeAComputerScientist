@@ -47,15 +47,15 @@ c. Írj egy függvényt, amely a megoldást elforgatja 90 fokkal az óra járás
 """
 
 
-# def elforgatasBalra(alapFelallas: list):
-#     tukrozott: list = [0, 0, 0, 0, 0, 0, 0, 0]
-#     for number in alapFelallas:
-#         tukrozott[number] = alapFelallas.index(7 - number)
-#     return tukrozott
-#
-#
-# teszt(elforgatasBalra([0, 4, 7, 5, 2, 6, 1, 3]) == [7, 1, 3, 0, 6, 4, 2, 5])
-# teszt(not elforgatasBalra([0, 4, 7, 5, 2, 6, 1, 3]) == [2, 5, 3, 1, 7, 4, 6, 0])
+def elforgatasBalra(alapFelallas: list):
+    tukrozott: list = [0, 0, 0, 0, 0, 0, 0, 0]
+    for number in alapFelallas:
+        tukrozott[number] = 7 - alapFelallas.index(number)
+    return tukrozott
+
+
+teszt(elforgatasBalra([0, 4, 7, 5, 2, 6, 1, 3]) == [7, 1, 3, 0, 6, 4, 2, 5])
+teszt(not elforgatasBalra([0, 4, 7, 5, 2, 6, 1, 3]) == [2, 5, 3, 1, 7, 4, 6, 0])
 
 
 def elforgatasJobbra(alapFelallas: list):
