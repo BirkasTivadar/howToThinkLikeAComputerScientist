@@ -67,3 +67,14 @@ def elforgatasJobbra(alapFelallas: list):
 
 teszt(elforgatasJobbra([0, 4, 7, 5, 2, 6, 1, 3]) == [2, 5, 3, 1, 7, 4, 6, 0])
 teszt(not elforgatasJobbra([0, 4, 7, 5, 2, 6, 1, 3]) == [7, 1, 3, 0, 6, 4, 2, 5])
+
+
+def elforgatas180a(alapfelallas: list):
+    return elforgatasBalra(elforgatasBalra(alapfelallas))
+
+
+def elforgatas180b(alapfelallas: list):
+    return elforgatasJobbra(elforgatasJobbra(alapfelallas))
+
+
+teszt(elforgatas180a([0, 4, 7, 5, 2, 6, 1, 3]) == elforgatas180b([0, 4, 7, 5, 2, 6, 1, 3]))
